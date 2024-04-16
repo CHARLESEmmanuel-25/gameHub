@@ -1,0 +1,36 @@
+app.get('/game/:gameName', (req, res)=>
+{
+    const newgame = req.params.gameName;
+    const game = games.find((game)=> game.name === newgame);
+    
+    res.render(game.name, {game});
+    const clientIp = req.ip;
+    //const test = responseTime();
+    console.log('Client IP:', clientIp );
+
+});
+let compteur = 0;
+app.use((req,res,next)=>{
+    let counteur = compteur++;
+    console.log(`requette numero ${counteur}, heure : ${Date().toString()}, adresse IP: ${req.ip}`);
+    next();
+});
+
+
+
+
+const games = require('./data/games.json');
+
+app.set('views', './views')
+app.set('view engine', 'ejs');
+
+app.use(express.static('public'));
+
+app.locals.games = games;
+app.locals.game = null;
+let compteur = 0;
+app.use((req,res,next)=>{
+    let counteur = compteur++;
+    console.log(`requette numero ${counteur}, heure : ${Date().toString()}, adresse IP: ${req.ip}`);
+    next();
+});

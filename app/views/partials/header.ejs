@@ -1,0 +1,22 @@
+<head>
+    <meta charset="UTF-8">
+    <title>GameHub</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+    <% if(game && game.cssFile)
+    {%>
+        <link rel="stylesheet" href="/css/<%= game.cssFile %>">
+    <%}%>
+  <body>
+    <header>
+      <h1>GameHub</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+
+          <%for(const element of games){%>
+            <li><a href="/game/<%= element.name %>"><%=element.title%></a></li>
+         <% }%>
+        </ul>
+      </nav>
+    </header>

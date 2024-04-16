@@ -1,0 +1,112 @@
+body {
+  background-color: #5771e4;
+  margin: 0px;
+  background: linear-gradient(45deg, #5771e4 0%, #3c40c6 100%);
+}
+
+#invader {
+  width: 100%;
+  display: flex;
+  /* chaque row avec les pixel en column */
+  flex-direction: column;
+  /* pour aligner horizontalement la grille au milieu du container */
+  align-items: center;
+  /* pour aligner verticalement la grille au milieu du container */
+  justify-content: center;
+  min-height: calc(100vh - 200px);
+}
+
+.row {
+  /* pass en display flex pour aligner horizontalement les pixels */
+  display: flex;
+}
+
+.pixel {
+  border: 2px solid;
+  /* envoie le style directement avec le js */
+  /* width: 20px;
+  height: 20px; */
+}
+
+/* .pixel--plain {
+  background-color: black;
+}
+
+.pixel--empty {
+  background-color: white;
+} */
+
+.configuration {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3c40c6;
+}
+
+.configuration :first-child {
+  border-radius: 5px 0px 0px 5px;
+}
+
+.configuration input {
+  padding: 1em;
+  font-size: 1.2em;
+  border: none;
+  width: 10em;
+  margin-right: 2px;
+}
+
+.configuration button {
+  padding: 1em;
+  font-size: 1.2em;
+  border-radius: 0px 5px 5px 0px;
+  background-color: #8b57e4;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.palette {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.palette-color {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0.8em;
+  cursor: pointer;
+}
+
+/* couleur du pixel ET couleur de la palette */
+.pixel--empty,
+.palette--empty {
+  background-color: white;
+  border-color: #4d4444;
+}
+.pixel--plain,
+.palette--plain {
+  background-color: #4d4444;
+  border-color: #2c2727;
+}
+.pixel--light,
+.palette--light {
+  background-color: #ffc048;
+  border-color: #ba8b35;
+}
+.pixel--highlight,
+.palette--highlight {
+  background-color: #0be881;
+  border-color: #08bf69;
+}
+
+.palette-color:hover {
+  transform: scale(1.1);
+}
+
+.palette-color--active {
+  transform: scale(1.2);
+  border: 2px solid rgb(0, 0, 0);
+}

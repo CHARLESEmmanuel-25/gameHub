@@ -1,0 +1,50 @@
+<%- include('./partials/header')%>
+
+<% if (gameName === 'invader') { %>
+    <form class="configuration">
+        <!-- <input type="number" id="grid-size" placeholder="Taille de la grille">
+        <button type="submit">Valider</button> -->
+    </form>
+    <div id="invader">
+        <!-- <div class="row">
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+        </div>
+        <div class="row">
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+        </div> -->
+    </div>
+    <script src="/js/<%= game.jsFile %>"></script>
+<% } else if (gameName === 'fourchette') { %>
+    <h3>Jeu De La Fourchette</h3>
+    <script src="/js/<%= game.jsFile %>"></script>
+<% } else if (gameName === 'diceRoller') { %>
+    <h3>Dice Roller</h3>
+    <div id="welcome">
+        <button id="play" class="btn" type="button">Jouer</button>
+    </div>
+    <div id="app" class="hidden">
+        <div class="form">
+            <form id="game-form">
+                <input
+                    type="range"
+                    id="dice-number-input"
+                    value="3"
+                    min="1"
+                    max="20"
+                >
+                <span id="dice-number">3</span>
+                <button class="btn">Valider le nombre de dés et lancer</button>
+            </form>
+        </div>
+        <div id="game">
+            <div class="board" id="player"></div>
+            <div class="board" id="dealer"></div>
+        </div>
+    </div>
+    <script src="/js/<%= game.jsFile %>"></script>
+<% } %> 
+
+</body>
+</html>
