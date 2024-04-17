@@ -1,7 +1,7 @@
 {
   "name": "s03-atelier-gamehub-charlesemm",
   "version": "1.0.0",
-  "description": "correction",
+  "description": "amelioration de l'application",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +9,7 @@
   "author": "Emmanuel",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.18.3",
     "nodemon": "^3.1.0",
